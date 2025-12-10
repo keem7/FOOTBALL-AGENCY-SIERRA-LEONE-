@@ -1,0 +1,269 @@
+:root {
+  --primary: #00540d;
+  --light: #f5f5f5;
+  --dark: #111;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+  background: var(--light);
+  color: var(--dark);
+  line-height: 1.6;
+}
+
+header {
+  background: #fff;
+  border-bottom: 3px solid var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 8vw;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  font-weight: bold;
+  font-size: 1.4rem;
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.logo img {
+  height: 40px;
+}
+
+.left-nav a {
+  margin-right: 1.2rem;
+  color: var(--dark);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.right-nav a {
+  margin-left: 1.2rem;
+  color: var(--dark);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+nav a:hover {
+  color: var(--primary);
+}
+
+.hero {
+  height: 70vh;
+  background: url("https://th.bing.com/th/id/R.0a32ebc86efa54d46c1fd8aca6f21add?rik=mM5YzWYzKdTh6g&riu=http%3a%2f%2fgdb.voanews.com%2f555AC453-5B3E-49A3-A5EC-5CE9EADD66F2_cx0_cy12_cw0_mw1024_s_n_r1.jpg&ehk=348oLuel86Aj3UOXRlqKKR0wo2vzjfszi2FpLM0bqV4%3d&risl=&pid=ImgRaw&r=0") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  position: relative;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, .45);
+}
+
+.hero div {
+  position: relative;
+  z-index: 2;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.btn {
+  background: var(--primary);
+  color: #fff;
+  padding: .9rem 2.2rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+section {
+  padding: 4rem 8vw;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  font-size: 2rem;
+}
+
+.cards {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  flex: 1 1 220px;
+  background: #fff;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .1);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card h3,
+.card p {
+  padding: .8rem 1rem 0;
+}
+
+.card p {
+  padding-bottom: 1.2rem;
+}
+
+footer {
+  background: var(--dark);
+  color: #fff;
+  text-align: center;
+  padding: 2rem;
+  font-size: .9rem;
+}
+/* ---------- carousel ---------- */
+.carousel {
+  position: relative;
+  max-width: 1200px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.slides {
+  display: flex;
+  transition: transform .5s ease;
+}
+
+.slide {
+  min-width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.ctrl {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  padding: .5rem 1rem;
+  cursor: pointer;
+  font-size: 1.2rem;
+  border-radius: 4px;
+}
+
+.ctrl.prev { left: 10px; }
+.ctrl.next { right: 10px; }
+
+input[name="slide"] { display: none; }
+#s1:checked ~ .slides { transform: translateX(0); }
+#s2:checked ~ .slides { transform: translateX(-100%); }
+/* ---------- fixtures table ---------- */
+section {
+  max-width: 1000px;
+  margin: auto;
+}
+
+h2 {
+  margin-bottom: 1rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .1);
+}
+
+th, td {
+  padding: 1rem;
+  text-align: left;
+}
+
+th {
+  background: var(--primary);
+  color: #fff;
+}
+
+tr:nth-child(even) {
+  background: #f2f2f2;
+}
+/* ---------- about page ---------- */
+.team-photo {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+} 
+/* ---------- contact page ---------- */
+form {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 2rem;
+  max-width: 600px;
+  margin: auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .1);
+}
+
+input, textarea {
+  width: 100%;
+  padding: .7rem;
+  margin: .6rem 0;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+}
+
+iframe {
+  width: 100%;
+  height: 320px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.office-info {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.social {
+  margin-top: .8rem;
+  display: flex;
+  justify-content: center;
+  gap: .7rem;
+}
+
+.social a {
+  display: inline-block;
+}
